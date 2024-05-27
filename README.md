@@ -10,4 +10,4 @@ We want you to implement the following features :
 
 - Transform text to a simple card (refer to designs in requirement-designs folder)
 ![Web](requirement-designs/web-design.jpg)
-![Mobile](requirement-designs/mobile-design.jpg)
+![Mobile](requirement-designs/mobile-design.ppg)
