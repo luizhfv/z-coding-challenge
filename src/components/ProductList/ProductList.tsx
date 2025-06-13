@@ -17,8 +17,13 @@ interface ProductResponse {
 
 export const ProductList = () => {
   const [products, setProducts] = React.useState<Product[]>([])
-
-    useEffect(() => {
+  const [documentTitle, setDocumentTitle] = React.useState<string>("Fetching Products")
+  
+  useEffect(() => {
+    document.title = documentTitle;
+  }, []);
+  
+  useEffect(() => {
         const fetchProducts = async () => {
             try {
                 const response = await fetch('https://dummyjson.com/products');
@@ -27,6 +32,7 @@ export const ProductList = () => {
                 }
                 const data: ProductResponse = await response.json();
                 setProducts(data.products);
+                setDocumentTitle(`${data.products.length} Products`);
             } catch (err: any) {
                 console.log(err)
             }
